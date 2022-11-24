@@ -1,0 +1,41 @@
+.card-news{
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+}
+.card-news-block{
+    width: 100%;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+}
+
+.card-news-item{
+    background-color: #fff;
+    width: 200px;
+    height: 200px;
+    margin: 4px 5px;
+    padding: 2px 4px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+.card-news-item img{
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.btn-mais{
+    width: 100%;
+    height: 20px;
+    color: #fff;
+    background-color: brown;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+}
