@@ -6,6 +6,7 @@ import imagem from "../../images/natalSemFome.jpeg";
 export default function News() {
     return (
         <section className="card-news" >
+            
             <div className="card-news-block" >
 
                 <div className="card-news-item" >

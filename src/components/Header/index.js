@@ -3,15 +3,18 @@ import { BsFacebook } from "react-icons/bs";
 import { FaInstagram } from "react-icons/fa";
 import { ImWhatsapp } from "react-icons/im";
 
-import { useState } from "react";
-
 
 export default function Header() {
     let data = new Date();
-    let dia = data.getDay();
+    let Sm = data.getDay();
+    let DD = data.getDate()
+    let MM = data.getMonth();
+    let AA = data.getFullYear();
     let semana;
+    let mes;
 
-    switch (dia) {
+    //logica da data do inicio da página
+    switch (Sm) {
         case 1:
             semana = 'Segunda-feira'
             break;
@@ -33,14 +36,53 @@ export default function Header() {
         default:
             semana = 'Domingo'
     }
-      
-     
-    const [Data , setData] = useState(semana);
+
+    switch (MM) {
+        case 1:
+            mes = 'Fevereiro'
+            break;
+        case 2:
+            mes = 'Março'
+            break;
+        case 3:
+            mes = 'Abril'
+            break;
+        case 4:
+            mes = 'Maio'
+            break;
+        case 5:
+            mes = 'Junho'
+            break;
+        case 6:
+            mes = 'Julho'
+            break;
+        case 7:
+            mes = 'Agosto'
+            break;
+        case 8:
+            mes = 'Setembro'
+            break;
+        case 9:
+            mes = 'Outubro'
+            break;
+        case 10:
+            mes = 'Novembro'
+            break;
+        case 1:
+            mes = 'Dezembro'
+            break;
+
+        default:
+            semana = 'Janeiro'
+    }
+    //fim 
+
+
 
     return (
         <nav className="card-header" >
             <div className="card-date">
-                {Data}
+                {semana} - {DD} de {mes} de {AA}
             </div>
             <b>Paróquia Nossa Senhora do Perpétuo Socorro Cocal-PI</b>
             <div className="card-social">

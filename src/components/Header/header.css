@@ -9,6 +9,17 @@
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
+
+.card-header b {
+    font-family:Arial, Helvetica, sans-serif;
+    color: #404040;
+}
+
+.card-date{
+    margin-left: 10px;
+    font-size: 13px;
+    color: #404040;
+}
 .card-social{
     display: flex;
 }
