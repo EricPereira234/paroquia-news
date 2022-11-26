@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Encontros from "./pages/Encontros";
 import Horarios from "./pages/Horarios";
+import LerMais from "./pages/LerMais";
+import Login from "./pages/Login";
 
 
 export default function Rota(){
@@ -14,6 +16,8 @@ export default function Rota(){
                 <Route path="/"  element={<Home/>}/>
                 <Route path="/encontros" element={<Encontros/>} />
                 <Route path="/horarios" element={<Horarios/>} />
+                <Route path="/ler" element={<LerMais/>} />
+                <Route path="/login" element={<Login/>} />
                 <Route path="*"  element={<h1>404</h1>} />
             </Routes>
 

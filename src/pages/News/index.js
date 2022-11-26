@@ -7,7 +7,7 @@ export default function News() {
     return (
         <section className="card-news" >
             
-            <a href="/" className="card-image" >
+            <a href="/ler" className="card-image" >
                 <img src={imagem} />
                 <label>Natal sem Fome</label>
             </a>
@@ -18,27 +18,27 @@ export default function News() {
                 <div className="card-news-item" >
                     <img src={imagem} /> <label>Titulo</label>
                     <label>Capanha natal sem fomo da paróquia de cocal</label>
-                    <a className="btn-mais" href="/" >Leia mais</a>
+                    <a className="btn-mais" href="/ler" >Leia mais</a>
                 </div>
                 <div className="card-news-item" >
                     <img src={imagem} /> <label>Titulo</label>
                     <label>Capanha natal sem fomo da paróquia de cocal</label>
-                    <a className="btn-mais" href="/" >Leia mais</a>
+                    <a className="btn-mais" href="/ler" >Leia mais</a>
                 </div>
                 <div className="card-news-item" >
                     <img src={imagem} /> <label>Titulo</label>
                     <label>Capanha natal sem fomo da paróquia de cocal</label>
-                    <a className="btn-mais" href="/" >Leia mais</a>
+                    <a className="btn-mais" href="/ler" >Leia mais</a>
                 </div>
                 <div className="card-news-item" >
                     <img src={imagem} /> <label>Titulo</label>
                     <label>Capanha natal sem fomo da paróquia de cocal</label>
-                    <a className="btn-mais" href="/" >Leia mais</a>
+                    <a className="btn-mais" href="/ler" >Leia mais</a>
                 </div>
                 <div className="card-news-item" >
                     <img src={imagem} /> <label>Titulo</label>
                     <label>Capanha natal sem fomo da paróquia de cocal</label>
-                    <a className="btn-mais" href="/" >Leia mais</a>
+                    <a className="btn-mais" href="/ler" >Leia mais</a>
                 </div>
 
             </div>
