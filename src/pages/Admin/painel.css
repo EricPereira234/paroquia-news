@@ -1,0 +1,28 @@
+
+.card-materia{
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.card-materia label {
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 20px;
+}
+.card-materia input {
+    width: 30%;
+    height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 4px;
+}
+.card-materia .text {
+    width: 60%;
+    height: 400px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px 5px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    resize: none;
+}

@@ -6,6 +6,7 @@ import Encontros from "./pages/Encontros";
 import Horarios from "./pages/Horarios";
 import LerMais from "./pages/LerMais";
 import Login from "./pages/Login";
+import Admin from "./pages/Admin";
 
 
 export default function Rota(){
@@ -18,6 +19,7 @@ export default function Rota(){
                 <Route path="/horarios" element={<Horarios/>} />
                 <Route path="/ler" element={<LerMais/>} />
                 <Route path="/login" element={<Login/>} />
+                <Route path="/dashboad" element={<Admin/>} />
                 <Route path="*"  element={<h1>404</h1>} />
             </Routes>
 
