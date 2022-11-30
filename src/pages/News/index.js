@@ -5,8 +5,8 @@ import { useState, useEffect } from "react";
 import { db } from "../../db/firebaseConection";
 import { collection, onSnapshot, query, orderBy, doc, deleteDoc } from "firebase/firestore";
 
-//importando arquivos
-import imagem from "../../images/natalSemFome.jpeg";
+// <label>{item.materia.substring(0, 40)}...</label>
+//<a className="btn-mais" href={`/ler:${item.id}`} >Leia mais</a>
 
 export default function News() {
 
@@ -24,12 +24,11 @@ export default function News() {
                  lista.push({
                      id: doc.id,
                      titulo: doc.data().titulo,
-                     materia: doc.data().materia,
-                     foto: doc.data().foto
+                     materia: doc.data().materia
                  })
              })
  
-             setLikis(lista.slice(0,10));
+             setLikis(lista.slice(0,30));
  
          })
  
@@ -37,24 +36,14 @@ export default function News() {
 
     return (
         <section className="card-news" >
-            
-            <a href="/ler" className="card-image" >
-                <img src={imagem} />
-                <label>Natal sem Fome</label>
-            </a>
+            {links.map((item, index) => (
+                <div  className="card-image" >
+                    <div className="titulo">{item.titulo}</div>
+                    <label>{item.materia}</label>
+                   
+                </div>
 
-             {links.map((item,index)=>(
-                 <div className="card-news-block" >
-
-                 <div className="card-news-item" >
-                     <img src={imagem} /> <label>Titulo</label>
-                     <label>{item.materia.substring(0,50)}..</label>
-                     <a className="btn-mais" href="/ler" >Leia mais</a>
-                 </div>
-               
-             </div>
-             ))}
-           
+            ))}
 
 
         </section>

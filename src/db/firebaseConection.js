@@ -3,6 +3,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth }  from "firebase/auth";
 
+
 const firebaseConfig = {
     apiKey: "AIzaSyAsG0nUxppPUXJmTuUW8uus54CJy8ZcIok",
     authDomain: "paroquia-news.firebaseapp.com",
@@ -17,5 +18,6 @@ const firebaseConfig = {
 const firebaseapp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseapp);
 const auth = getAuth(firebaseapp);
+
 
 export {db, auth};

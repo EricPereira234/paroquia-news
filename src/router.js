@@ -17,7 +17,7 @@ export default function Rota(){
                 <Route path="/"  element={<Home/>}/>
                 <Route path="/encontros" element={<Encontros/>} />
                 <Route path="/horarios" element={<Horarios/>} />
-                <Route path="/ler" element={<LerMais/>} />
+                <Route path="/ler:id" element={<LerMais/>} />
                 <Route path="/login" element={<Login/>} />
                 <Route path="/dashboad" element={<Admin/>} />
                 <Route path="*"  element={<h1>404</h1>} />

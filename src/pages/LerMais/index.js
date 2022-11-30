@@ -1,17 +1,53 @@
 import "./lerMais.css";
+import { useState, useEffect } from "react";
+
+//importando banco de dados
+import { db } from "../../db/firebaseConection";
+import { collection, onSnapshot, query, orderBy} from "firebase/firestore";
 
 
 //importando arquivos
 import Header from "../../components/Header";
 
-export default function Ler(){
-    return(
+export default function Ler(id) {
+
+     //buscando registros no firestory
+     const [links, setLikis] = useState([]);
+
+     useEffect(() => {
+ 
+         const linksRef = collection(db, "noticias");
+         const queryRef = query(linksRef, orderBy("created", "asc"));
+ 
+         const unsub = onSnapshot(queryRef, (snapshot) => {
+             let lista = [];
+             snapshot.forEach((doc) => {
+                 lista.push({
+                     id: doc.id,
+                     titulo: doc.data().titulo,
+                     materia: doc.data().materia
+                 })
+             })
+ 
+             setLikis(lista.id);
+ 
+         })
+ 
+     }, []);
+
+    return (
         <div className="card-ler">
-            <Header/>
-            <h3>Titulo</h3>
+            <Header />
+           
+            {links.map((item, index) => (
+             
             <div className="card-ler-body" >
-                 desevolvimento da matéria
+                <h3>{item.titulo}</h3>
+                desevolvimento da matéria
             </div>
+            
+            ))}
+        
         </div>
     )
 }
