@@ -9,7 +9,7 @@ import { collection, onSnapshot, query, orderBy} from "firebase/firestore";
 //importando arquivos
 import Header from "../../components/Header";
 
-export default function Ler(id) {
+export default function Ler() {
 
      //buscando registros no firestory
      const [links, setLikis] = useState([]);
@@ -29,7 +29,7 @@ export default function Ler(id) {
                  })
              })
  
-             setLikis(lista.id);
+             setLikis(lista.slice(0,30));
  
          })
  

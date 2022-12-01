@@ -40,6 +40,9 @@ export default function News() {
                 <div  className="card-image" >
                     <div className="titulo">{item.titulo}</div>
                     <label>{item.materia}</label>
+                    <label>{item.materia.substring(0, 40)}...</label>
+                    <a className="btn-mais" href={`/ler:${item.id}`} >Leia mais</a>
+
                    
                 </div>
 
