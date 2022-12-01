@@ -68,12 +68,12 @@ export default function Header() {
         case 10:
             mes = 'Novembro'
             break;
-        case 1:
+        case 11:
             mes = 'Dezembro'
             break;
 
         default:
-            semana = 'Janeiro'
+            mes = 'Janeiro'
     }
     //fim 
 
