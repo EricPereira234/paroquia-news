@@ -1,5 +1,5 @@
 body {
-    background-color: #f7f7f7;
+    background-color:#1B1C29;
 }
 
 .card-news{
@@ -18,16 +18,20 @@ body {
     padding: 10px 2px;
     display: flex;
     flex-direction: column;
-    background-color: #f6ee075e;
+    background-color:#101119;
     box-shadow: 2px 2px 8px #ebb505;
-    
+    transition: ease-out 0.5s;
 }
 
+.card-image:hover{
+  transform: scale(1.1);
+}
 
 .card-image .titulo{
     margin: auto;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 19px;
+    color: #31FB6A;
 }
 
 
@@ -39,6 +43,6 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    color: #404040;
+    color: #fff;
 }
 
