@@ -6,7 +6,6 @@
     padding: 20px 0;
     align-items: center;
     justify-content: center;
-    border-bottom: 1px solid #e7e2e2d0;
 }
 
 .card-logo .logo1 {
@@ -50,4 +49,13 @@
     margin-left: -3px;
     color: #ebb505;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@media screen and (max-width: 700px) {
+
+   .card-logo{
+    padding: 10px 0;
+   }
+    
 }
