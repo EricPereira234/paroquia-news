@@ -1,4 +1,5 @@
 import "./menu.css";
+import { Link } from "react-router-dom";
 
 //importando icones
 import { FaHome } from "react-icons/fa";
@@ -9,9 +10,9 @@ import { TfiAgenda } from "react-icons/tfi";
 export default function Menu(){
     return(
         <nav className="nav-menu">
-         <a href="/" ><FaHome/></a>
-         <a href="/horarios" ><BiTimeFive/></a>
-         <a href="/encontros" ><TfiAgenda/></a>
+         <Link to="/" ><FaHome/></Link>
+         <Link to="/horarios" ><BiTimeFive/></Link>
+         <Link to="/encontros" ><TfiAgenda/></Link>
         </nav>
     )
 }
