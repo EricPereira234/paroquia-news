@@ -1,5 +1,5 @@
 import "./painel.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 
 
@@ -10,6 +10,13 @@ import { addDoc, collection, onSnapshot, query, orderBy, doc, deleteDoc } from "
 export default function Painel() {
     const [tituloAdmin, setTitulo] = useState('');
     const [materia, setMateria] = useState('');
+
+    const [tituloBatismo, setTituloBatismo] = useState('');
+    const [materiaBatismo, setMateriaBatismo] = useState('');
+
+
+    const [tituloCasmento, setTituloCasamento] = useState('');
+    const [materiaCasamento, setMateriaCasamento] = useState('');
    
   
     //função que salva as noticias
@@ -38,11 +45,62 @@ export default function Painel() {
 
 
 
+
+    //função que salva as Reuniões para o batismo
+    async function SalvaBatismo() {
+        if (tituloBatismo === '' || materiaBatismo === '') {
+            toast.error('Preencha todos os campos');
+            return;
+        }
+
+
+        addDoc(collection(db, "batismos"), {
+            titulo: tituloBatismo,
+            materia: materiaBatismo,
+            created: new Date(),
+        }).then(() => {
+            setTituloBatismo('');
+            setMateriaBatismo('');
+            toast.success('salvo com sucesso!');
+        }).catch((err) => {
+            toast.error('que pena não salvou !')
+        })
+
+
+    }
+
+
+     //função que salva as Reuniões para Casamentos
+     async function SalvaCasamento() {
+        if (tituloCasmento === '' || materiaCasamento === '') {
+            toast.error('Preencha todos os campos');
+            return;
+        }
+
+
+        addDoc(collection(db, "casamentos"), {
+            titulo: tituloCasmento,
+            materia: materiaCasamento,
+            created: new Date(),
+        }).then(() => {
+            setTituloCasamento('');
+            setMateriaCasamento('');
+            toast.success('salvo com sucesso!');
+        }).catch((err) => {
+            toast.error('que pena não salvou !')
+        })
+
+
+    }
+
+
+
+
     return (
         <>
 
             <div className="card-materia" >
-                <label>Título da publicação</label>
+                <label>Data do evento</label>
                 <input type={'text'} placeholder="Título.."
                     value={tituloAdmin}
                     onChange={(e) => setTitulo(e.target.value)}
@@ -56,6 +114,38 @@ export default function Painel() {
                 <button className="btn-salvar" onClick={SalvaRegitro} >Salvar</button>
             </div>
 
+            <div className="card-materia" >
+                <label>Batismo</label>
+                <input type={'text'} placeholder="Horário"
+                    value={tituloBatismo}
+                    onChange={(e) => setTituloBatismo(e.target.value)}
+                />
+                <label>Dia da Reunião </label>
+                <textarea className="text"
+                    value={materiaBatismo}
+                    onChange={(e) => setMateriaBatismo(e.target.value)}
+                />
+
+                <button className="btn-salvar" onClick={SalvaBatismo} >Salvar</button>
+            </div>
+
+            <div className="card-materia" >
+                <label>Casamentos</label>
+                <input type={'text'} placeholder="Horário"
+                    value={tituloCasmento}
+                    onChange={(e) => setTituloCasamento(e.target.value)}
+                />
+                <label>Dia da Reunião </label>
+                <textarea className="text"
+                    value={materiaCasamento}
+                    onChange={(e) => setMateriaCasamento(e.target.value)}
+                />
+
+                <button className="btn-salvar" onClick={SalvaCasamento} >Salvar</button>
+            </div>
+
+
+          
         </>
     )
 }
