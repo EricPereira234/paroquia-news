@@ -2,6 +2,8 @@ import "./painel.css";
 import { useState } from "react";
 import { toast } from "react-toastify";
 
+import Menu from "../../components/Menu";
+
 
 //importando banco de dados
 import { db } from "../../db/firebaseConection";
@@ -98,7 +100,7 @@ export default function Painel() {
 
     return (
         <>
-
+         <Menu/>
             <div className="card-materia" >
                 <label>Data do evento</label>
                 <input type={'text'} placeholder="Título.."

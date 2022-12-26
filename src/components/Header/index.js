@@ -1,5 +1,4 @@
 import "./header.css";
-import { Link } from "react-router-dom";
 
 //importando icones
 import { BsFacebook } from "react-icons/bs";
@@ -89,9 +88,9 @@ export default function Header() {
             </div>
             <b>Paróquia Nossa Senhora do Perpétuo Socorro Cocal-PI</b>
             <div className="card-social">
-                <Link to="/" ><BsFacebook size={15} /></Link>
-                <Link to="/" > <FaInstagram size={15} /></Link>
-                <Link to="/" > <ImWhatsapp size={15} /></Link>
+                <a href="https://www.facebook.com/nsps.cocal.3/" target="blank" ><BsFacebook size={15} /></a>
+                <a href="https://www.instagram.com/nspscocal/" target="blank"> <FaInstagram size={15} /></a>
+                <a href="https://wa.me/5586998077231" target="blank" > <ImWhatsapp size={15} /></a>
             </div>
         </nav>
     )

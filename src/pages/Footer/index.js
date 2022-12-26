@@ -8,8 +8,8 @@ export default function Footer(){
         <footer>
           <label>Paróquia Nossa Senhora do Perpétuos Socorro</label>
           <div className="card-logo-footer" >
-            Criado por - 
-            <img src={logo} /> <span>Eric Pereira</span>
+            criado por - 
+            <img src={logo} /> <span>eric pereira</span>
           </div>
           
         </footer>
