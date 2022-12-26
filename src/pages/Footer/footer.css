@@ -1,12 +1,32 @@
 
 footer {
     width: 100%;
-    height: 20px;
-    color: #fff;
-    font-size: 12px;
+    height: 50px;
+    color: rgba(185, 184, 184, 0.774);
+    font-size: 10px;
     background-color: #000;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-bottom: -7.4px;
+    border-radius: 4px;
+}
+
+footer label {
+    color: #fff;
+    font-size: 12px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-bottom: 5px;
+}
+
+.card-logo-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+footer img {
+    width: 10px;
+    opacity: 0.6;
 }
