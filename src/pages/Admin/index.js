@@ -1,6 +1,7 @@
 import "./painel.css";
 import { useState } from "react";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 import Menu from "../../components/Menu";
 
@@ -101,6 +102,12 @@ export default function Painel() {
     return (
         <>
          <Menu/>
+
+         <div className="card-painel" >
+            <Link to={'/painel'} >Painel</Link>
+            <Link to={'/painelReunioes'} >Reunião</Link>
+         </div>
+
             <div className="card-materia" >
                 <label>Data do evento</label>
                 <input type={'text'} placeholder="Título.."
