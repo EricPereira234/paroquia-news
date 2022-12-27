@@ -22,7 +22,7 @@ export default function Rota() {
                 <Route path="/encontros" element={<Encontros />} />
                 <Route path="/horarios" element={<Horarios />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/dashboad" element={<Private> <Admin /> </Private> } />
+                <Route path="/dashboard" element={<Private> <Admin /> </Private> } />
                 <Route path="/painel" element={<Private><Painel/></Private>} />
                 <Route path="/painelReunioes" element={<Private><ReunioesAdmin/></Private>} />
                 <Route path="*" element={<h1>404</h1>} />

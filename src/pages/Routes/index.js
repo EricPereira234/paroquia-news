@@ -35,15 +35,19 @@ export default function Private({ children }) {
     }, []);
 
 
-    if (loading) {
-        return (
-            <div></div>
+    if(loading){
+        return(
+          <div></div>
         )
-    }
+      }
+    
+      if(!signed && loading){
+        return <Navigate to="/login" />
+      }
+    
+      if(signed && !loading){
+        return (children);
+      }
 
-    if (!signed) {
-        return <Navigate to={'/login'} />
-    }
-
-    return (children);
+    return <Navigate to="/login" />;
 }

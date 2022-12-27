@@ -19,13 +19,15 @@ export default function Login() {
 
 
     function logar() {
-  
-        signInWithEmailAndPassword(auth, email, senha).then(()=>{
-            toast.success('bem-vindo de volta!');
-            navigate('/dashboad');
-        }).catch(()=>{
-            toast.error('usuario não logado verifique todos os campos');
-        });
+
+        signInWithEmailAndPassword(auth, email, senha)
+            .then(() => {
+                toast.success('bem-vindo de volta!');
+                navigate('/dashboard');
+            })
+            .catch(() => {
+                toast.error('usuario não logado verifique todos os campos');
+            });
 
     }
     return (
