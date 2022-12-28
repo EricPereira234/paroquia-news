@@ -9,6 +9,7 @@ import Admin from "./pages/Admin";
 import Painel from "./pages/PainelAdmin";
 import ReunioesAdmin from "./pages/PainelAdmin/ReunioesAdminPainel";
 import Private from "./pages/Routes";
+import Erro from "./Erro";
 
 
 
@@ -22,10 +23,10 @@ export default function Rota() {
                 <Route path="/encontros" element={<Encontros />} />
                 <Route path="/horarios" element={<Horarios />} />
                 <Route path="/login" element={<Login />} />
-                <Route path="/dashboard" element={<Private> <Admin /> </Private> } />
+                <Route path="/dashboard/painel" element={<Private> <Admin /> </Private> } />
                 <Route path="/painel" element={<Private><Painel/></Private>} />
                 <Route path="/painelReunioes" element={<Private><ReunioesAdmin/></Private>} />
-                <Route path="*" element={<h1>404</h1>} />
+                <Route path="*" element={<Erro/>} />
             </Routes>
 
         </Router>

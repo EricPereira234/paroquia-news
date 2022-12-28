@@ -7,8 +7,9 @@ import Menu from "../../components/Menu";
 
 
 //importando banco de dados
-import { db } from "../../db/firebaseConection";
-import { addDoc, collection, onSnapshot, query, orderBy, doc, deleteDoc } from "firebase/firestore";
+import { db, auth } from "../../db/firebaseConection";
+import { signOut } from "firebase/auth";
+import { addDoc, collection } from "firebase/firestore";
 
 export default function Painel() {
     const [tituloAdmin, setTitulo] = useState('');
@@ -96,8 +97,11 @@ export default function Painel() {
 
     }
 
-
-
+    // função que desloga o usuário
+    async function logout(){
+        await signOut(auth)
+        localStorage.clear("@detailUser2");
+      }
 
     return (
         <>
@@ -106,6 +110,7 @@ export default function Painel() {
          <div className="card-painel" >
             <Link to={'/painel'} >Painel</Link>
             <Link to={'/painelReunioes'} >Reunião</Link>
+            <Link onClick={logout} >Sair</Link>
          </div>
 
             <div className="card-materia" >

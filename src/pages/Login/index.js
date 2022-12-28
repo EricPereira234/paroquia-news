@@ -23,7 +23,7 @@ export default function Login() {
         signInWithEmailAndPassword(auth, email, senha)
             .then(() => {
                 toast.success('bem-vindo de volta!');
-                navigate('/dashboard');
+                navigate('/dashboard/painel');
             })
             .catch(() => {
                 toast.error('usuario não logado verifique todos os campos');
