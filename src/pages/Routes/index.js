@@ -41,13 +41,11 @@ export default function Private({ children }) {
         )
       }
     
-      if(!signed && loading){
+      if(!signed ){
         return <Navigate to="/login" />
       }
     
-      if(signed && !loading){
-        return (children);
-      }
+     
 
-    return <Navigate to="/login" />;
+    return  (children);
 }
