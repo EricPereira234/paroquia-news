@@ -20,7 +20,11 @@
 
 @media screen and (max-width: 700px){
     .card-horaios h3 {
-        font-size: 15px;
+        width: 100%;
+        font-size: 18px;
+        font-weight: 900;
         text-align: center;
+        border-top: 1px solid #ccc;
+        padding-top: 1em;
     }
 }

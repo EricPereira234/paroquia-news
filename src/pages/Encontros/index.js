@@ -1,12 +1,13 @@
 import "./Encontros.css";
 import { useState, useEffect } from "react";
-import Header from "../../components/Header";
-import { AiOutlineArrowLeft } from "react-icons/ai";
+
+//importando arquivos
+import Menu from "../../components/Menu";
 
 
 //importando banco de dados
 import { db } from "../../db/firebaseConection";
-import { addDoc, collection, onSnapshot, query, orderBy, doc, deleteDoc } from "firebase/firestore";
+import { collection, onSnapshot, query, orderBy} from "firebase/firestore";
 
 
 export default function Encontros() {
@@ -65,15 +66,15 @@ export default function Encontros() {
 
     return (
         <div className="card-horaios">
-            <Header />
-            <a href="/" className="aut" ><AiOutlineArrowLeft size={25} /></a>
+            <Menu />
+            
             <h3>Reuniões de preparação para o Batismo</h3>
             {links.map((item, index) => (
                 <ul>
                     <b>Reuniões</b>
 
                     <li>{item.materiaBatismo}</li>
-                    <li style={{ color: 'brown' }} >Horário: {item.tituloBatismo}</li>
+                    <li style={{ color: '#F64C00' }} >Horário: {item.tituloBatismo}</li>
                 </ul>
             ))}
 
@@ -81,10 +82,10 @@ export default function Encontros() {
             <h3>Reuniões de preparação para o Sacramento do Matrimônio</h3>
             {casamento.map((item, index) => (
                 <ul>
-                    <b>Reuniões</b>
+                    <b>Reunião</b>
 
                     <li>{item.materiaCasamento}</li>
-                    <li style={{ color: 'brown' }} >Horário: {item.tituloCasamento}</li>
+                    <li style={{ color: '#F64C00' }} >Horário: {item.tituloCasamento}</li>
                 </ul>
             ))}
         </div>
