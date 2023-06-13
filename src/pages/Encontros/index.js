@@ -1,3 +1,4 @@
+//nova versão
 import "./Encontros.css";
 import { useState, useEffect } from "react";
 
