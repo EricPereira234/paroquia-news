@@ -1,4 +1,5 @@
 //nova versão do site
+//adicionar o firebese
 import "./Encontros.css";
 import { useState, useEffect } from "react";
 
