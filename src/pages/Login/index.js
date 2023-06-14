@@ -18,8 +18,8 @@ export default function Login() {
     const [senha, setSenha] = useState();
 
 
-    function logar() {
-
+    function logar(e) {
+        e.preventDefault();
         signInWithEmailAndPassword(auth, email, senha)
             .then(() => {
                 toast.success('bem-vindo de volta!');
@@ -33,7 +33,7 @@ export default function Login() {
     return (
         <>
             <Logo />
-            <div className="card-login" >
+            <form className="card-login" onSubmit={logar} >
                 <label>Email</label>
                 <input type={'email'} placeholder="digite o email..." 
                       value={email}
@@ -44,9 +44,9 @@ export default function Login() {
                       value={senha}
                       onChange={(e) => setSenha(e.target.value)}
                 />
-                <button onClick={logar} >Entrar</button>
+                <button type="submit" >Entrar</button>
 
-            </div>
+            </form>
         </>
     )
 }
