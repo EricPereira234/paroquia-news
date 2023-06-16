@@ -47,6 +47,19 @@
 
    .nav-menu a {
     font-size: 22px;
+    margin: 0 2rem;
    }
     
+}
+
+@media screen and (max-width: 375px) {
+  .nav-menu a {
+    margin: 0 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .nav-menu a {
+    margin: 0 1rem;
+  }
 }
