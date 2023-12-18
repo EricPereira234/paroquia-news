@@ -9,6 +9,7 @@ import { ImWhatsapp } from "react-icons/im";
 export default function Header() {
     let data = new Date();
     let Sm = data.getDay();
+
     let DD = data.getDate()
     let MM = data.getMonth();
     let AA = data.getFullYear();
@@ -86,7 +87,6 @@ export default function Header() {
             <div className="card-date">
                 {semana} - {DD} de {mes} de {AA}
             </div>
-            <b>Paróquia Nossa Senhora do Perpétuo Socorro Cocal-PI</b>
             <div className="card-social">
                 <a href="https://www.facebook.com/nsps.cocal.3/" target="blank" ><BsFacebook size={15} /></a>
                 <a href="https://www.instagram.com/nspscocal/" target="blank"> <FaInstagram size={15} /></a>

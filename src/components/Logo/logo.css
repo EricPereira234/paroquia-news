@@ -3,7 +3,7 @@
     width: 300px;
     display: flex;
     margin: auto;
-    padding: 20px 0;
+    padding: 10px 0;
     align-items: center;
     justify-content: center;
 }
@@ -12,7 +12,7 @@
     font-size: 40px;
     font-weight: 900;
     letter-spacing: -2px;
-    color: #fff;
+    color: #000;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -39,7 +39,7 @@
     font-size: 40px;
     font-weight: 900;
     letter-spacing: -4px;
-    color: #fff;
+    color: #000;
     font-family: Arial, Helvetica, sans-serif;
 }
 
