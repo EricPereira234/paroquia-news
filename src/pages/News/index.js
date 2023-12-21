@@ -49,6 +49,7 @@ export default function News() {
                 {links.map((item, index) => (
 
                     <div className="card-image" >
+                        <img src={item.url} />
                         <div className="titulo">{item.titulo}</div>
                         <label>{item.materia}</label>
 

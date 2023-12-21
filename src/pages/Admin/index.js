@@ -1,19 +1,27 @@
 import "./painel.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import { v4 as uuidV4 } from 'uuid';
 
 import Menu from "../../components/Menu";
 
 
 //importando banco de dados
-import { db, auth } from "../../db/firebaseConection";
+import { db, auth, storage } from "../../db/firebaseConection";
 import { signOut } from "firebase/auth";
 import { addDoc, collection } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 export default function Painel() {
+
     const [tituloAdmin, setTitulo] = useState('');
     const [materia, setMateria] = useState('');
+    const [carImages, setCarImages] = useState([]);
+    // pegando a url da imagem para salvar no banco
+    var valores = carImages.map(function(e) { return e.url; } );
+   
+
 
     const [tituloBatismo, setTituloBatismo] = useState('');
     const [materiaBatismo, setMateriaBatismo] = useState('');
@@ -21,10 +29,14 @@ export default function Painel() {
 
     const [tituloCasmento, setTituloCasamento] = useState('');
     const [materiaCasamento, setMateriaCasamento] = useState('');
-   
-  
+
+
+
     //função que salva as noticias
     async function SalvaRegitro() {
+        
+
+        //salvando texto da notícia
         if (tituloAdmin === '' || materia === '') {
             toast.error('Preencha todos os campos');
             return;
@@ -34,6 +46,7 @@ export default function Painel() {
         addDoc(collection(db, "noticias"), {
             titulo: tituloAdmin,
             materia: materia,
+            url: valores,
             created: new Date(),
         }).then(() => {
             setTitulo('');
@@ -44,7 +57,56 @@ export default function Painel() {
         })
 
 
+
+
     }
+
+
+    // araea de upload de imagens
+   
+    async function handleFile(e) {
+        if (e.target.files && e.target.files[0]) {
+            const image = e.target.files[0]
+
+            if (image.type === 'image/jpeg' || image.type === 'image/png') {
+                await handleUpload(image)
+            } else {
+                alert("Envie uma imagem jpeg ou png!")
+                return;
+            }
+
+
+        }
+    }
+
+    async function handleUpload(image) {
+
+        const uidImage = uuidV4();
+
+        const uploadRef = ref(storage, `images/${uidImage}`)
+
+        uploadBytes(uploadRef, image)
+            .then((snapshot) => {
+                getDownloadURL(snapshot.ref).then((downloadUrl) => {
+                    const imageItem = {
+                        name: uidImage,
+                        previewUrl: URL.createObjectURL(image),
+                        url: downloadUrl,
+                    }
+
+                    setCarImages([imageItem])
+                   
+
+
+                })
+            })
+
+    }
+
+
+
+
+
 
 
 
@@ -74,8 +136,8 @@ export default function Painel() {
     }
 
 
-     //função que salva as Reuniões para Casamentos
-     async function SalvaCasamento() {
+    //função que salva as Reuniões para Casamentos
+    async function SalvaCasamento() {
         if (tituloCasmento === '' || materiaCasamento === '') {
             toast.error('Preencha todos os campos');
             return;
@@ -98,24 +160,47 @@ export default function Painel() {
     }
 
     // função que desloga o usuário
-    async function logout(){
+    async function logout() {
         await signOut(auth)
         localStorage.clear("@detailUser2");
-      }
+    }
 
     return (
         <>
-         <Menu/>
+            <Menu />
 
-         <div className="card-painel" >
-            <Link to={'/painel'} >Painel</Link>
-            <Link to={'/painelReunioes'} >Reunião</Link>
-            <Link onClick={logout} >Sair</Link>
-         </div>
+            <div className="card-painel" >
+                <Link to={'/painel'} >Painel</Link>
+                <Link to={'/painelReunioes'} >Reunião</Link>
+                <Link onClick={logout} >Sair</Link>
+            </div>
+
+
 
             <div className="card-materia" >
-                <label>Data do evento</label>
-                <input type={'text'} placeholder="Título.."
+                <label>Criando Notícias</label>
+
+                <div >
+                    <button >
+                        
+                        <div >
+                            <input type="file" accept="image/*"  onChange={handleFile} />
+                        </div>
+                    </button>
+
+                    {carImages.map(item => (
+                        <div key={item.name} >
+                            
+                            <img
+                                src={item.previewUrl}
+                                alt="Foto do carro"
+                            />
+                        </div>
+                    ))}
+
+                </div>
+
+                <input type={'text'} placeholder="Título da notícia..."
                     value={tituloAdmin}
                     onChange={(e) => setTitulo(e.target.value)}
                 />
@@ -127,6 +212,10 @@ export default function Painel() {
 
                 <button className="btn-salvar" onClick={SalvaRegitro} >Salvar</button>
             </div>
+
+
+
+
 
             <div className="card-materia" >
                 <label>Batismo</label>
@@ -159,7 +248,7 @@ export default function Painel() {
             </div>
 
 
-          
+
         </>
     )
 }
