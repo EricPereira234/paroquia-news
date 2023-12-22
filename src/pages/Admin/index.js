@@ -1,5 +1,5 @@
 import "./painel.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 import { v4 as uuidV4 } from 'uuid';
@@ -20,6 +20,7 @@ export default function Painel() {
     const [carImages, setCarImages] = useState([]);
     // pegando a url da imagem para salvar no banco
     var valores = carImages.map(function(e) { return e.url; } );
+    //console.log(valores[0])
    
 
 
@@ -46,7 +47,7 @@ export default function Painel() {
         addDoc(collection(db, "noticias"), {
             titulo: tituloAdmin,
             materia: materia,
-            url: valores,
+            url: valores[0],
             created: new Date(),
         }).then(() => {
             setTitulo('');
@@ -181,15 +182,15 @@ export default function Painel() {
                 <label>Criando Notícias</label>
 
                 <div >
-                    <button >
+                   
                         
-                        <div >
+                        <div  className="card-input" >
                             <input type="file" accept="image/*"  onChange={handleFile} />
                         </div>
-                    </button>
+                 
 
                     {carImages.map(item => (
-                        <div key={item.name} >
+                        <div key={item.name}  className="card-img-post" >
                             
                             <img
                                 src={item.previewUrl}

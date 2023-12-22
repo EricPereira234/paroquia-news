@@ -1,23 +1,36 @@
+.card-geral{
+    width: 80%;
+}
+
 .manchete{
     width: 100%;
     height: 200px;
     margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    color: #fff;
-    font-size: 40px;
-    background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVF2jXbrOXUyF1UuYK4xhYvBYDI5ap-3uNDQ&usqp=CAU');
-    background-size: cover;
-    background-position: center;
-    transition: ease-in-out  0.5s;
 }
 
-.manchete:hover {
-    opacity: 0.8;
+.card-img img{
+   width: 100%;
+   height: 200px;
+   background-size: cover;
+   background-position: center;
+   transition: ease-in-out 0.4s;
 }
+
+.card-img img:hover{
+    opacity: 0.5;
+}
+
+.manchete label {
+    position: absolute;
+    z-index: 1000;
+    margin-top: -4rem;
+    margin-left: 30px;
+    font-size: 30px;
+    font-weight: 900;
+    color: #fff;
+}
+
+
 
 .card-news {
     width: 100%;
@@ -31,42 +44,59 @@
 }
 
 .card-image {
-    height: 100px;
-    transition: ease-out 0.5s;
-   
-    background-size: cover;
-    background-position: center;
+    height: 150px;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-end;
+    align-items: center;
+    justify-content: center;
+    transition: ease-out 0.5s;
+    background-color: rgba(0, 0, 0, 0.1);
 }
+
+.img-noticia{
+    width: 100%;
+    height: 100px;
+    background-size: cover;
+    background-position: center;
+}
+
 
 .card-image:hover {
     transform: scale(1.1);
 }
 
 .card-image .titulo {
-   
     font-family: Arial, Helvetica, sans-serif;
     font-size: 19px;
-    
+    z-index: 1000;
+    color: #c4170c;
 }
 
 
 
 .card-image label {
-   
+    max-width: 30ch;
+    height: 20px;
+    overflow: hidden;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #fff;
+    color: #000;
+    z-index: 900;
 }
 
 
 @media screen and (max-width: 700px) {
+    .card-geral{
+        width: 100%;
+    }
     .card-image .titulo {
         font-size: 14px;
     }
     .card-image label {
         font-size: 10px
+    }
+
+    .manchete label {
+        font-size: 20px;
+        margin-left: 2px;
     }
 }
