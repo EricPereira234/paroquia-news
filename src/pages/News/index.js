@@ -1,5 +1,6 @@
 import "./news.css";
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 
 
 //importando banco de dados
@@ -58,7 +59,7 @@ export default function News() {
                 })
             })
 
-            setLikis(lista.slice(0, 30));
+            setLikis(lista.slice(1, 30));
 
         })
 
@@ -70,24 +71,24 @@ export default function News() {
     return (
         <div className="card-geral">
             {links1.map((item, index) => (
-                <div className="manchete" >
+                <Link to={`/viewsnews/${item.id}/${item.titulo}`} className="manchete" >
                     <div className="card-img" >
                         <img src={item.url} />
                     </div>
                     <label>{item.titulo}</label>
-                </div>
+                </Link>
             ))}
 
             <section className="card-news" >
 
                 {links.map((item, index) => (
 
-                    <div className="card-image" >
+                    <Link to={`/viewsnews/${item}`} className="card-image" >
                         <img src={item.url} className="img-noticia" />
                         <div className="titulo">{item.titulo}</div>
                         <label  >{item.materia}</label>
 
-                    </div>
+                    </Link>
 
                 ))}
 

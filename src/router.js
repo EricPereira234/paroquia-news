@@ -8,6 +8,7 @@ import Login from "./pages/Login";
 import Admin from "./pages/Admin";
 import Painel from "./pages/PainelAdmin";
 import ReunioesAdmin from "./pages/PainelAdmin/ReunioesAdminPainel";
+import ViewsNews from "./pages/ViewsNews";
 import Private from "./pages/Routes";
 import Erro from "./Erro";
 
@@ -26,6 +27,7 @@ export default function Rota() {
                 <Route path="/dashboard/painel" element={<Private> <Admin /> </Private> } />
                 <Route path="/painel" element={<Private><Painel/></Private>} />
                 <Route path="/painelReunioes" element={<Private><ReunioesAdmin/></Private>} />
+                <Route path="/viewsnews/:id" element={<Private><ViewsNews/></Private>} />
                 <Route path="*" element={<Erro/>} />
             </Routes>
 
