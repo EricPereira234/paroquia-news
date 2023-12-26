@@ -71,7 +71,7 @@ export default function News() {
     return (
         <div className="card-geral">
             {links1.map((item, index) => (
-                <Link to={`/viewsnews/${item.id}/${item.titulo}`} className="manchete" >
+                <Link to={`/viewsnews/${item.id}`} className="manchete" >
                     <div className="card-img" >
                         <img src={item.url} />
                     </div>
@@ -83,7 +83,7 @@ export default function News() {
 
                 {links.map((item, index) => (
 
-                    <Link to={`/viewsnews/${item}`} className="card-image" >
+                    <Link to={`/viewsnews/${item.id}`} className="card-image" >
                         <img src={item.url} className="img-noticia" />
                         <div className="titulo">{item.titulo}</div>
                         <label  >{item.materia}</label>
