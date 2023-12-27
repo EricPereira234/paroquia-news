@@ -27,7 +27,7 @@ export default function Rota() {
                 <Route path="/dashboard/painel" element={<Private> <Admin /> </Private> } />
                 <Route path="/painel" element={<Private><Painel/></Private>} />
                 <Route path="/painelReunioes" element={<Private><ReunioesAdmin/></Private>} />
-                <Route path="/viewsnews/:id" element={<Private><ViewsNews/></Private>} />
+                <Route path="/viewsnews/:id" element={<ViewsNews/>} />
                 <Route path="*" element={<Erro/>} />
             </Routes>
 
