@@ -1,6 +1,6 @@
 import styles from "./viewNews.module.css";
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 
 import { doc, getDoc } from 'firebase/firestore';
 import { db } from '../../db/firebaseConection';
@@ -33,9 +33,15 @@ export default function ViewsNews() {
 
   return (
     <div className={styles.cardMateria} >
+      <div className={styles.cardLink} >
+        <Link to={'/'} > Voltar</Link>
+      </div>
       <h2>{materia.titulo}</h2>
       <img src={materia.url} alt={materia.titulo} className={styles.imgMateria} />
-      <p className={styles.texto} >{materia.materia}</p>
+      {materia.materia.split('\n').map((paragrafo, index) => (
+        <p key={index} className={styles.texto}  >{paragrafo}</p>
+      ))}
+
     </div>
   );
 }

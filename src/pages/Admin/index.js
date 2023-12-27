@@ -206,7 +206,7 @@ export default function Painel() {
                     onChange={(e) => setTitulo(e.target.value)}
                 />
                 <label>Texto da publicação</label>
-                <textarea className="text"
+                <textarea className="textMateria"
                     value={materia}
                     onChange={(e) => setMateria(e.target.value)}
                 />

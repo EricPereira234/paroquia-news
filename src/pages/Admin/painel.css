@@ -61,6 +61,17 @@
     resize: none;
 }
 
+.textMateria{
+    width: 80%;
+    height: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 2px 5px;
+    border: 2px solid #F2D479;
+    border-radius: 6px;
+    outline: none;
+    resize: none;
+}
+
 .card-materia .btn-salvar{
     width: 100px;
     padding: 5px 0;
